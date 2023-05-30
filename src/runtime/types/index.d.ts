@@ -1,3 +1,5 @@
+import { ComponentCustomProperties } from 'vue'
+
 export type Device = {
     userAgent: string
     isDesktop: boolean
@@ -16,4 +18,10 @@ export type Device = {
     isChrome: boolean
     isSamsung: boolean
     isCrawler: boolean
+}
+
+declare module '@vue/runtime-core' {
+  interface ComponentCustomProperties {
+    $device: Device
   }
+}
